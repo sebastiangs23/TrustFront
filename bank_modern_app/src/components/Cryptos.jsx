@@ -9,8 +9,8 @@ import axios from 'axios'
 import { AiOutlineSearch } from "react-icons/ai";
 import { newlogo } from '../assets'
 import Allcryptos from './Allcryptos.jsx';
-import Trending from './Trending';
-import News from './news.jsx'
+import Trending from './Trending.jsx';
+import News from './News.jsx'
 import Stock from './Stock.jsx'
 import { SiBitcoinsv } from "react-icons/si";
 import { AiFillFire } from "react-icons/ai";
