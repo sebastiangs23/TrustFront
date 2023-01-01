@@ -1,8 +1,9 @@
 import axios from "axios";
+const URL = "https://trust-back-jcx313p33-sebastiangs23.vercel.app"
 
 export function getAllCryptos() {
     return async function (dispatch) {
-        var cryptos = await axios.get("https://deployback-production.up.railway.app/")
+        var cryptos = await axios.get(`${URL}`)
         return dispatch({
             type: "GET_CRYPTOS",
             payload: cryptos.data
@@ -12,7 +13,7 @@ export function getAllCryptos() {
 
 export function getTrendingCoins() { //
     return async function (dispatch) {
-        let trending = await axios.get("http://localhost:3005/trending");
+        let trending = await axios.get(`${URL}/trending`);
         return dispatch({
             type: "GET_TRENDING",
             payload: trending.data
@@ -22,7 +23,7 @@ export function getTrendingCoins() { //
 
 export function getStockDaily(stockSymbol) {
     return async function (dispatch) {
-        let stock = await axios.get(`http://localhost:3005/stockdaily/${stockSymbol}`)
+        let stock = await axios.get(`${URL}/${stockSymbol}`)
 
         return dispatch({
             type: "GET_STOCK_DAILY",
@@ -33,7 +34,7 @@ export function getStockDaily(stockSymbol) {
 
 export function getStockPrice(stockSymbol) { 
     return async function (dispatch) {
-        let stock = await axios.get(`http://localhost:3005/stockprice/${stockSymbol}`)
+        let stock = await axios.get(`${URL}/${stockSymbol}`)
 
         return dispatch({
             type: "GET_STOCK_PRICE",
@@ -44,7 +45,7 @@ export function getStockPrice(stockSymbol) {
 
 export function getStockInfo(stockSymbol){
     return async function(dispatch){
-        let stock = await axios.get(`http://localhost:3005/stockinfo/${stockSymbol}`)
+        let stock = await axios.get(`${URL}/${stockSymbol}`)
 
         console.log(stock.data)
         return dispatch({
@@ -57,7 +58,7 @@ export function getStockInfo(stockSymbol){
 
 export function getNews(){
     return async function(dispatch){
-        let news = await axios.get("http://localhost:3005/news")
+        let news = await axios.get(`${URL}/news`)
         return dispatch({
             type: "GET_NEWS",
             payload: news.data

@@ -16,8 +16,8 @@ function Allcryptos() {
     const [input, setInput] = useState("");
 
     const bringData = async () => {
-        // await axios.get("https://deployback-production.up.railway.app/")
-        await axios.get("http://localhost:3005/") //
+        // await axios.get("http://localhost:3005/") //
+        await axios.get("https://trust-back-jcx313p33-sebastiangs23.vercel.app/") //
             .then(r => {
                 setCoins(r.data)
                 setTablaCoins(r.data)
