@@ -10,8 +10,8 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { newlogo } from '../assets'
 import Allcryptos from './Allcryptos.jsx';
 import Trending from './Trending';
-import News from './news'
-import Stock from './Stock'
+import News from './news.jsx'
+import Stock from './Stock.jsx'
 import { SiBitcoinsv } from "react-icons/si";
 import { AiFillFire } from "react-icons/ai";
 import { RiStockFill } from "react-icons/ri";
