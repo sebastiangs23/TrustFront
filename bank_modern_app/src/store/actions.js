@@ -23,7 +23,7 @@ export function getTrendingCoins() { //
 
 export function getStockDaily(stockSymbol) {
     return async function (dispatch) {
-        let stock = await axios.get(`${URL}/${stockSymbol}`)
+        let stock = await axios.get(`${URL}/stockdaily/${stockSymbol}`)
 
         return dispatch({
             type: "GET_STOCK_DAILY",
@@ -34,7 +34,7 @@ export function getStockDaily(stockSymbol) {
 
 export function getStockPrice(stockSymbol) { 
     return async function (dispatch) {
-        let stock = await axios.get(`${URL}/${stockSymbol}`)
+        let stock = await axios.get(`${URL}/stockprice/${stockSymbol}`)
 
         return dispatch({
             type: "GET_STOCK_PRICE",
@@ -45,7 +45,7 @@ export function getStockPrice(stockSymbol) {
 
 export function getStockInfo(stockSymbol){
     return async function(dispatch){
-        let stock = await axios.get(`${URL}/${stockSymbol}`)
+        let stock = await axios.get(`${URL}/stockinfo/${stockSymbol}`)
 
         console.log(stock.data)
         return dispatch({
