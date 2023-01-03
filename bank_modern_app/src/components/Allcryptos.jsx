@@ -9,11 +9,19 @@ import axios from 'axios'
 import { AiOutlineSearch } from "react-icons/ai";
 import { newlogo } from '../assets'
 
+//LOADER
+import { Rings } from 'react-loader-spinner'
+
+
+
 function Allcryptos() {
 
     const [coins, setCoins] = useState([])
     const [tablaCoins, setTablaCoins] = useState([])
     const [input, setInput] = useState("");
+
+    //
+    // const classes= useStyles();
 
     const bringData = async () => {
         // await axios.get("http://localhost:3005/") //
@@ -49,6 +57,9 @@ function Allcryptos() {
 
     return (
         <div className='flex w-[1000px] '>
+
+
+
             <div className=' rounded-lg shadow hidden md:block'>
 
                 <div className='mt-2 flex'>
@@ -75,40 +86,61 @@ function Allcryptos() {
 
                         </thead>
                         <tbody>
-                            {coins.map((c) => {
-                                return (
-                                    <tr className='text-white sm:mr-5 mr-0  hover:bg-cyan-100 hover:scale-95 flex flex-row p-6 rounded-[20px]  feature-card'>
-                                        <td className='py-8 px-10 font-semibold  whitespace-nowrap'>
-                                            {c.rank}
-                                        </td  >
-                                        <td className='py-8 px-4 whitespace-nowrap'>
-                                            <img src={c.image} className="w-[28px] h-[27px]" />
-                                        </td>
-                                        <td className='py-8 px-4 font-semibold whitespace-nowrap'>
-                                            {c.symbol}
-                                        </td>
-                                        <td className='py-8 px-8 font-semibold  whitespace-nowrap'>
-                                            {c.name}
-                                        </td>
 
 
-                                        <td className='py-8 px-4 whitespace-nowrap'>
-                                            {c.price}$
-                                        </td>
-                                        <td className='py-8 px-4 whitespace-nowrap'>
-                                            {c.marketCap}$
-                                        </td>
-                                        <td className='py-8 px-4 whitespace-nowrap'>
-                                            {c.volumen}$
-                                        </td>
-                                        <td className='py-8 px-4 whitespace-nowrap'>
-                                            {c.supply}
-                                        </td>
+                            {/* {if(coins)  coins else {"asdfsad"}  }  */}
 
-                                    </tr>
-                                )
-                            }
-                            )}
+
+
+                            {coins.length === 0 ?
+                                <div className='w-[800px] h-[400px] flex items-center  justify-center '>
+                                    <Rings
+                                        className=" "
+                                        height="80"
+                                        width="80"
+                                        color="#00FFFF"
+                                        radius="6"
+                                        wrapperStyle={{}}
+                                        wrapperClass=""
+                                        visible={true}
+                                        ariaLabel="rings-loading"
+                                    />
+                                </div> :
+                                coins.map((c) => {
+                                    return (
+                                        <tr className='text-white sm:mr-5 mr-0  hover:bg-cyan-100 hover:scale-95 flex flex-row p-6 rounded-[20px]  feature-card'>
+                                            <td className='py-8 px-10 font-semibold  whitespace-nowrap'>
+                                                {c.rank}
+                                            </td  >
+                                            <td className='py-8 px-4 whitespace-nowrap'>
+                                                <img src={c.image} className="w-[28px] h-[27px]" />
+                                            </td>
+                                            <td className='py-8 px-4 font-semibold whitespace-nowrap'>
+                                                {c.symbol}
+                                            </td>
+                                            <td className='py-8 px-8 font-semibold  whitespace-nowrap'>
+                                                {c.name}
+                                            </td>
+
+
+                                            <td className='py-8 px-4 whitespace-nowrap'>
+                                                {c.price}$
+                                            </td>
+                                            <td className='py-8 px-4 whitespace-nowrap'>
+                                                {c.marketCap}$
+                                            </td>
+                                            <td className='py-8 px-4 whitespace-nowrap'>
+                                                {c.volumen}$
+                                            </td>
+                                            <td className='py-8 px-4 whitespace-nowrap'>
+                                                {c.supply}
+                                            </td>
+
+                                        </tr>
+                                    )
+                                }
+                                )}
+
                         </tbody>
 
 
@@ -124,6 +156,8 @@ function Allcryptos() {
 
 
                 <div className=' p-4 rounded-lg shadow' >
+
+
                     <div className='text-white sm:mr-5 mr-0 hoverscale-105 flex flex-row p-6 rounded-[20px] feature-card space-x-5' >
                         <div>Rank</div>
                         <div>Coin</div>
@@ -133,7 +167,8 @@ function Allcryptos() {
                     </div>
                     <div className='flex items-center space-x-2 text-sm' >
                         <div>
-                            {coins.map((c) => {
+
+                            {coins ? coins.map((c) => {
                                 return (
                                     <div className='text-white sm:mr-5 mr-0 hoverscale-105 flex flex-row p-6 rounded-[20px] feature-card space-x-9'>
                                         <div  >
@@ -156,7 +191,20 @@ function Allcryptos() {
                                     </div>
                                 )
                             }
-                            )}
+                            ) : <div className='ml-200 mt-100'>
+                                <Rings
+                                    height="80"
+                                    width="80"
+                                    color="#00FFFF"
+                                    radius="6"
+                                    wrapperStyle={{}}
+                                    wrapperClass=""
+                                    visible={true}
+                                    ariaLabel="rings-loading"
+                                />
+                            </div>}
+
+
                         </div>
 
                     </div>
