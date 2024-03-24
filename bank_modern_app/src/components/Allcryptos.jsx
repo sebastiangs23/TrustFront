@@ -25,13 +25,13 @@ function Allcryptos() {
 
     const bringData = async () => {
         // await axios.get("http://localhost:3005/") //
-        // await axios.get("") //
-        //     .then(r => {
-        //         setCoins(r.data)
-        //         setTablaCoins(r.data)
-        //     }).catch(e => {
-        //         console.log(e)
-        //     })
+        await axios.get("https://trust-back-jcx313p33-sebastiangs23.vercel.app/") //
+            .then(r => {
+                setCoins(r.data)
+                setTablaCoins(r.data)
+            }).catch(e => {
+                console.log(e)
+            })
     }
 
 
