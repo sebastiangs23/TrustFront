@@ -19,7 +19,7 @@ import { RiStockFill } from "react-icons/ri";
 
 
 
-const Cryptos = () => {
+const   Cryptos = () => {
 
     const [menuItem, setMenuItem] = useState("")
     const [component, setComponent] = useState("")
@@ -65,7 +65,7 @@ const Cryptos = () => {
                         </div>
                         <h1 className=' font-poppins font-semibold text-[42px] text-white   ' >
                             <span className='text-gradient'>
-                                Trust
+                                RWA
                             </span>
                         </h1>
                     </div>

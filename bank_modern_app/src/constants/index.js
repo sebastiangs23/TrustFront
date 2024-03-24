@@ -204,12 +204,12 @@ export const socialMedia = [
   {
     id: "social-media-3",
     icon: twitter,
-    link: "https://www.twitter.com/",
+    link: "https://twitter.com/RWA_UEA",
   },
   {
     id: "social-media-4",
     icon: linkedin,
-    link: "https://www.linkedin.com/in/sebastian-gomez-salinas-510586246/",
+    link: "https://www.linkedin.com/",
   },
 ];
 

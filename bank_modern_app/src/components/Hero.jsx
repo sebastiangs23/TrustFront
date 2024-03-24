@@ -35,9 +35,7 @@ const Hero = () => {
           </h1>
 
           <div className='ss:flex hidden md:mr-4 mr-0 hover:text-secondary' >
-            <Link to="/home"  >
-              <GetStarted />
-            </Link>
+            <GetStarted />
           </div>
         </div>
 

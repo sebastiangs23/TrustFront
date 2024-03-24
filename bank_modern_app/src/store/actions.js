@@ -1,5 +1,5 @@
 import axios from "axios";
-const URL = "https://trust-back-jcx313p33-sebastiangs23.vercel.app"
+const URL = ""
 
 export function getAllCryptos() {
     return async function (dispatch) {
